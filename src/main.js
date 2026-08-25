@@ -4,17 +4,18 @@ import L from 'leaflet';
 
 const birthday = new Date('2026-08-26T00:00:00+05:30');
 const previewMode = new URLSearchParams(window.location.search).has('preview');
+const photo = (name) => `${import.meta.env.BASE_URL}photos/${name}`;
 const memories = [
-  { image: '/photos/image-1787572542135.png', title: 'The birthday girl', copy: 'A little bit of sunshine, wherever you go.' },
-  { image: '/photos/image-1787572583927.png', title: 'Your brightest nights', copy: 'You make every room warmer just by being in it.' },
-  { image: '/photos/image-1787572619237.png', title: 'Twenty-one', copy: 'Here is to your next chapter, my favourite person.' }
+  { image: photo('image-1787572542135.png'), title: 'The birthday girl', copy: 'A little bit of sunshine, wherever you go.' },
+  { image: photo('image-1787572583927.png'), title: 'Your brightest nights', copy: 'You make every room warmer just by being in it.' },
+  { image: photo('image-1787572619237.png'), title: 'Twenty-one', copy: 'Here is to your next chapter, my favourite person.' }
 ];
 const foodMemories = [
-  { image: '/photos/image-1787604363166.png', title: 'Burger girl', copy: 'A very serious meeting with a very good burger.' },
-  { image: '/photos/image-1787606676180.png', title: 'Dinner dates', copy: 'Good food, pretty places, and that little look of joy.' },
-  { image: '/photos/image-1787606710353.png', title: 'Food first', copy: 'Honestly, the priorities are perfect.' },
-  { image: '/photos/image-1787606783275.png', title: 'Cute and hungry', copy: 'The face of someone who is absolutely not sharing.' },
-  { image: '/photos/image-1787606818771.png', title: 'One more bite', copy: 'A whole food era, captured one delicious moment at a time.' }
+  { image: photo('image-1787604363166.png'), title: 'Burger girl', copy: 'A very serious meeting with a very good burger.' },
+  { image: photo('image-1787606676180.png'), title: 'Dinner dates', copy: 'Good food, pretty places, and that little look of joy.' },
+  { image: photo('image-1787606710353.png'), title: 'Food first', copy: 'Honestly, the priorities are perfect.' },
+  { image: photo('image-1787606783275.png'), title: 'Cute and hungry', copy: 'The face of someone who is absolutely not sharing.' },
+  { image: photo('image-1787606818771.png'), title: 'One more bite', copy: 'A whole food era, captured one delicious moment at a time.' }
 ];
 
 const app = document.querySelector('#app');
@@ -55,7 +56,7 @@ app.innerHTML = `
       <div class="portrait-stage" aria-label="A birthday keepsake for Ananya">
         <div class="sun-disc"></div>
         <div class="portrait-frame">
-          <img class="portrait-image" src="/photos/image-1787572542135.png" alt="Ananya in a red outfit" />
+          <img class="portrait-image" src="${photo('image-1787572542135.png')}" alt="Ananya in a red outfit" />
           <div class="portrait-glow"></div>
           <div class="portrait-letter">A</div>
           <p class="portrait-caption">the birthday girl</p>
@@ -183,14 +184,14 @@ app.innerHTML = `
         <p>Eight frames. One favourite person. A scrapbook page for every version of you I get to love.</p>
       </div>
       <div class="memory-collage" aria-label="A collage of Ananya's memories">
-        <figure><img src="/photos/image-1787572542135.png" alt="Ananya in a colourful outfit" /><figcaption>you, always</figcaption></figure>
-        <figure><img src="/photos/image-1787604363166.png" alt="Ananya enjoying a burger" /><figcaption>foodie energy</figcaption></figure>
-        <figure><img src="/photos/image-1787572583927.png" alt="Ananya smiling in pink light" /><figcaption>best smile</figcaption></figure>
-        <figure><img src="/photos/image-1787606783275.png" alt="Ananya being playful at dinner" /><figcaption>tiny menace</figcaption></figure>
-        <figure><img src="/photos/image-1787572619237.png" alt="Ananya at a restaurant" /><figcaption>date night</figcaption></figure>
-        <figure><img src="/photos/image-1787606676180.png" alt="Ananya at a restaurant table" /><figcaption>main character</figcaption></figure>
-        <figure><img src="/photos/image-1787606710353.png" alt="Ananya sharing a food moment" /><figcaption>the little moments</figcaption></figure>
-        <figure><img src="/photos/image-1787606818771.png" alt="Ananya enjoying dinner" /><figcaption>my favourite view</figcaption></figure>
+        <figure><img src="${photo('image-1787572542135.png')}" alt="Ananya in a colourful outfit" /><figcaption>you, always</figcaption></figure>
+        <figure><img src="${photo('image-1787604363166.png')}" alt="Ananya enjoying a burger" /><figcaption>foodie energy</figcaption></figure>
+        <figure><img src="${photo('image-1787572583927.png')}" alt="Ananya smiling in pink light" /><figcaption>best smile</figcaption></figure>
+        <figure><img src="${photo('image-1787606783275.png')}" alt="Ananya being playful at dinner" /><figcaption>tiny menace</figcaption></figure>
+        <figure><img src="${photo('image-1787572619237.png')}" alt="Ananya at a restaurant" /><figcaption>date night</figcaption></figure>
+        <figure><img src="${photo('image-1787606676180.png')}" alt="Ananya at a restaurant table" /><figcaption>main character</figcaption></figure>
+        <figure><img src="${photo('image-1787606710353.png')}" alt="Ananya sharing a food moment" /><figcaption>the little moments</figcaption></figure>
+        <figure><img src="${photo('image-1787606818771.png')}" alt="Ananya enjoying dinner" /><figcaption>my favourite view</figcaption></figure>
       </div>
       <div class="book-controls">
         <button class="book-button collage-prev" type="button" aria-label="Return to chapter three, our Delhi dates"><span>←</span> Chapter three</button>
